@@ -1,2 +1,1 @@
-﻿
-declare var kendo: any;
+﻿declare var kendo: any;
