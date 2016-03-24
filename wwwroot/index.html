@@ -1,0 +1,51 @@
+<html>
+
+  <head>
+    <title>Angular 2 QuickStart</title>
+
+    <base href="/" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="lib/deps.js"></script>
+    <script src="http://localhost:54799/signalr/hubs"></script>
+
+      <link href="http://cdn.kendostatic.com/2015.3.1111/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+      <link href="http://cdn.kendostatic.com/2015.3.1111/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+      <link href="http://cdn.kendostatic.com/2015.3.1111/styles/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
+      <link href="http://cdn.kendostatic.com/2015.3.1111/styles/kendo.default.min.css" rel="stylesheet" type="text/css" />
+      <link href="http://cdn.kendostatic.com/2015.3.1111/styles/kendo.dataviz.default.min.css" rel="stylesheet" type="text/css" />
+      
+      <!--
+      <script src="http://cdn.kendostatic.com/2015.3.1111/js/jquery.min.js"></script>
+      -->
+      <script src="http://cdn.kendostatic.com/2015.3.1111/js/jszip.min.js"></script>
+      <script src="http://cdn.kendostatic.com/2015.3.1111/js/kendo.all.min.js"></script>
+      <script src="http://cdn.kendostatic.com/2015.3.1111/js/kendo.aspnetmvc.min.js"></script>
+      
+
+
+      <!-- Könnte man auch via Gulp einbinden! -->
+      <script src="oauth/oauth-lib.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+      System.config({
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('app/boot')
+            .then(null, console.error.bind(console));
+    </script>
+    
+  </head>
+
+  <!-- 3. Display the application -->
+  <body>
+        <app>Loading...</app>
+  </body>
+
+</html>

@@ -1,0 +1,11 @@
+<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <li [class.active]="isActive('')" ><a [routerLink]="['/Home']">Home</a></li>
+        <li [class.active]="isActive('/flug-buchen')"><a [routerLink]="['/FlugBuchen']">Buchen</a></li>
+        <li [class.active]="isActive('/flug-grid')"><a [routerLink]="['/FlugGrid']">Grid (ohne Login möglich)</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

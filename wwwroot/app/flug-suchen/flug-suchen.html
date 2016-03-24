@@ -1,0 +1,69 @@
+﻿<h1>Flüge suchen!</h1>
+<div>
+    <label>Von:</label>
+    <input class="form-control" [(ngModel)]="von" />
+</div>
+
+<div>
+    <label>Nach:</label>
+    <input class="form-control" [(ngModel)]="nach" />
+</div>
+
+<div>
+    <label>Datum ab:</label>
+    
+    <date-control 
+                  #d="dateControl"
+                  [date]="datum" 
+                  (dateChange)="datum = $event">
+    </date-control>
+
+    <div>
+        Datum: {{ datum }}, **{{d.changed}}**
+
+    </div>
+</div>
+
+
+<div>
+    <input type="button" class="btn btn-default" value="Suchen!" (click)="suchen()" />
+</div>
+
+<div class="row">
+
+    <div *ngFor="#flug of fluegeSubject | async" class="col-sm-4" >
+            <flug-card [item]="flug"
+                       [selectedItem]="selectedFlug"
+                       (selectedItemChange)="selectFlug($event)">
+
+                <div><b>Anzahl:</b>{{flug.count}}</div>
+
+                <a class="btn btn-default" [routerLink]="['/FlugEdit', {id: flug.id}]">Editieren</a>
+                <a class="btn btn-default" [routerLink]="['/FlugEditImp', {id: flug.id}]">Editieren (Imp.)</a>
+            </flug-card>
+            <!--
+            Langform:
+            [selectedItem]="selectedFlug"
+            (selectedItemChange)="selectedFlug = $event"
+             -->
+        </div>
+</div>
+
+
+<!--
+<table [hidden]="fluege.length == 0" class="table table-striped">
+
+    <tr *ngFor="#flug of fluege"  [class.active]="flug.id == selectedFlug?.id">
+
+        <td>{{flug.id}}</td>
+        <td>{{flug.datum?.substr(0,10)}}</td>
+        <td>{{flug.abflugort | ort:'short' }}</td>
+        <td>{{flug.zielort | ort:'long' }}</td>
+        <td>
+            <a style="cursor: pointer" (click)="selectFlug(flug)">Auswählen</a>
+            | <a [routerLink]="['/FlugEdit', {id: flug.id}]">Editieren</a>
+        </td>
+    </tr>
+
+</table>
+-->

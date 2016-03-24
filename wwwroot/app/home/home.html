@@ -1,0 +1,23 @@
+﻿<h1>{{info}}</h1>
+<p>
+    Willkommen zu dieser Demo-Anwendung!
+</p>
+
+<p *ngIf="name">
+    Hallo, {{name}}!
+</p>
+
+<p *ngIf="needLogin" style="font-weight: bold; color:firebrick">
+    Bitte melden Sie sich an, um die Anwendung nutzen zu können.
+</p>
+<p>&nbsp;</p>
+<p>
+    <b>Klicken Sie auf Login, um sich anzumelden!</b>
+</p>
+<p>
+    <b>Benutzername/Passwort: max/geheim</b>
+</p>
+<p>
+    <input type="button" class="btn" value="Login!" (click)="login()" />
+</p>
+
